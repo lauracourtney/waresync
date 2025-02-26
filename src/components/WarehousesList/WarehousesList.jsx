@@ -1,7 +1,6 @@
 import "./WarehousesList.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import WarehouseModal from "../WarehouseModal/WarehouseModal";
 
@@ -11,12 +10,12 @@ export default function WarehouseList() {
   const [error, setError] = useState("");
   const [openModal, setOpenModal] = useState(false);
   const [selectedWarehouse, setSelectedWarehouse] = useState({});
-  const [searchTerm, setSearchTerm] = useState(""); 
+  const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState(null);
   const [orderBy, setOrderBy] = useState("asc");
 
   const navigate = useNavigate();
-  const apiPath = `http://localhost:8080/api/warehouses`;
+  const apiPath = `http://localhost:3000/api/warehouses`;
 
   const handleClick = () => {
     navigate("/add");
@@ -34,7 +33,7 @@ export default function WarehouseList() {
 
       const response = await axios.get(url);
       setWarehouses(response.data);
-      setFilteredWarehouses(response.data); 
+      setFilteredWarehouses(response.data);
     } catch (error) {
       setError(error.message || "Failed to fetch warehouses");
     }
@@ -84,7 +83,6 @@ export default function WarehouseList() {
       return column;
     });
   };
-  
 
   if (warehouses.length === 0) {
     return <>Loading...</>;
@@ -104,7 +102,7 @@ export default function WarehouseList() {
     <section className="warehouses">
       <div className="warehouses__component">
         <div className="warehouses__header">
-          <h1 className="warehouses__page-title">Warehouse List</h1>
+          <h1 className="warehouses__page-title">Warehouses</h1>
           <input
             placeholder="Search..."
             type="search"
@@ -119,8 +117,11 @@ export default function WarehouseList() {
 
         {/* Sorting Headers */}
         <div className="categories">
-          <h4 className="categories__warehouse" onClick={() => handleSort("warehouse_name")}>
-            WAREHOUSE 
+          <h4
+            className="categories__warehouse"
+            onClick={() => handleSort("warehouse_name")}
+          >
+            WAREHOUSE
             <svg
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -129,27 +130,45 @@ export default function WarehouseList() {
               <path d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z" />
             </svg>
           </h4>
-          <h4 className="categories__address"onClick={() => handleSort("address")}>ADDRESS <svg
+          <h4
+            className="categories__address"
+            onClick={() => handleSort("address")}
+          >
+            ADDRESS{" "}
+            <svg
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
               className="categories__icon"
             >
               <path d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z" />
-            </svg></h4>
-          <h4 className="categories__name" onClick={() => handleSort("contact_name")}>CONTACT NAME <svg
+            </svg>
+          </h4>
+          <h4
+            className="categories__name"
+            onClick={() => handleSort("contact_name")}
+          >
+            CONTACT NAME{" "}
+            <svg
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
               className="categories__icon"
             >
               <path d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z" />
-            </svg></h4>
-          <h4 className="categories__information"onClick={() => handleSort("contact_info")}>CONTACT INFORMATION <svg
+            </svg>
+          </h4>
+          <h4
+            className="categories__information"
+            onClick={() => handleSort("contact_info")}
+          >
+            CONTACT INFORMATION{" "}
+            <svg
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
               className="categories__icon"
             >
               <path d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z" />
-            </svg></h4>
+            </svg>
+          </h4>
           <h4 className="categories__actions">ACTIONS</h4>
         </div>
 
@@ -157,18 +176,17 @@ export default function WarehouseList() {
           <div className="warehouses__details" key={warehouse.id}>
             <div className="warehouses__item">
               <div className="warehouses__left">
-
-                <div className="warehouse-main">
-                  <h4 className="warehouse-main__heading">WAREHOUSE</h4>
+                <div className="warehouse">
+                  <h4 className="warehouse__heading">WAREHOUSE</h4>
                   <Link
                     to={`/warehousedetails/${warehouse.id}`}
-                    className="warehouse-main__link"
+                    className="warehouse__link"
                   >
-                    <p className="warehouse-main__location">
+                    <p className="warehouse__location">
                       {warehouse.warehouse_name}
                     </p>
                     <svg
-                      className="warehouse-main__icon"
+                      className="warehouse__icon"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -238,11 +256,11 @@ export default function WarehouseList() {
       {openModal && (
         <>
           <div className="modal-background"></div>
-          <WarehouseModal
+          {/* <WarehouseModal
             warehouse={selectedWarehouse}
             closeModal={closeModal}
             fetchWarehouses={fetchWarehouses}
-          />
+          /> */}
         </>
       )}
     </section>

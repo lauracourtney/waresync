@@ -24,6 +24,7 @@ body {
 
 // PAGE HEADER
 h1 {
+  color: $primary-color-dark;
   @include font("Newsreader-Regular", 1.75rem, 2.25rem, 600);
   @include tablet {
     @include font("Newsreader-Regular", 2rem, 2.5rem, 600);
@@ -32,6 +33,7 @@ h1 {
 
 // SUBHEADER
 h2 {
+  color: $primary-color-dark;
   @include font("Newsreader-Regular", 1.25rem, 1.75rem, 600);
   @include tablet {
     @include font("Newsreader-Regular", 1.5rem, 2rem, 600);
@@ -40,6 +42,7 @@ h2 {
 
 // LABELS, LINKS, & BUTTONS
 h3 {
+  color: $primary-color-dark;
   @include font("Newsreader-Regular", 0.8125rem, 1.25rem, 600);
 
   @include tablet {
@@ -58,6 +61,7 @@ h4 {
 
 // H5 IS BODY LARGE
 h5 {
+  color: $primary-color-dark;
   @include font("Newsreader-Regular", 0.9375rem, 1.625rem, 400);
 
   @include tablet {
@@ -67,6 +71,7 @@ h5 {
 
 // H6 IS BODY SMALL
 h6 {
+  color: $primary-color-dark;
   @include font("Newsreader-Regular", 0.6875rem, 1rem, 400);
 
   @include tablet {

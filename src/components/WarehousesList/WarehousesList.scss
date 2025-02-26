@@ -1,0 +1,232 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+
+.warehouses {
+  @include list-component;
+
+  &__header {
+    @include item-list-header;
+  }
+
+  &__page-title {
+    @include page-title;
+  }
+
+  &__search-bar {
+    @include search-bar(url("../../assets/icons/search.svg"));
+  }
+
+  &__addition-button {
+    @include add-new-button;
+  }
+
+  &__details {
+    @include list-item-box;
+  }
+
+  &__item {
+    @include item-list-contents;
+  }
+
+  &__left {
+    @include flex-box(flex-start, flex-start, nowrap, column);
+    width: 45%;
+
+    @include tablet {
+      @include flex-box(space-between, center, nowrap, row);
+      width: 50%;
+      padding-right: 3rem;
+    }
+
+    @include desktop {
+      padding-right: 0rem;
+      width: 44%;
+    }
+  }
+
+  &__right {
+    @include flex-box(flex-start, flex-start, nowrap, column);
+    width: 45%;
+
+    @include tablet {
+      @include flex-box(space-between, center, nowrap, row);
+      width: 49%;
+    }
+
+    @include desktop {
+      width: 47%;
+    }
+  }
+}
+
+.categories {
+  display: none;
+  background-color: $background-color;
+  @include height-width(2rem, 100%);
+  padding: 0 1rem;
+
+  @include tablet {
+    @include flex-box(space-between, center);
+    padding: 0 2rem;
+  }
+
+  &__icon {
+    @include sorting-icon;
+  }
+
+  &__address {
+    margin-right: 4rem;
+  }
+}
+.warehouse {
+  @include flex-box(center, flex-start, nowrap, column);
+  padding-bottom: 1rem;
+
+  @include tablet {
+    width: 47.5%;
+    padding: 0;
+  }
+
+  @include desktop {
+    width: 75%;
+  }
+
+  &__location {
+    color: $primary-color;
+    font-weight: 600;
+
+    @include tablet {
+      text-align: left;
+    }
+  }
+
+  &__link {
+    @include flex-box(center, center);
+    text-decoration: none;
+    align-items: center;
+    gap: 0.25rem;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      .warehouse__icon {
+        transform: translateX(4px);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+  }
+
+  &__icon {
+    @include height-width(1rem, 1rem);
+    fill: $primary-color;
+    margin-left: 0.25rem;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__heading {
+    @include list-item-header;
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
+.contact {
+  @include flex-box(center, flex-start, nowrap, column);
+  padding-bottom: 1rem;
+  width: 100%;
+
+  @include tablet {
+    width: 45%;
+    padding: 0;
+  }
+
+  &__heading {
+    @include list-item-header;
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+.location {
+  @include flex-box(center, flex-start, wrap, column);
+
+  @include tablet {
+    width: 47.5%;
+  }
+
+  @include desktop {
+    width: 70%;
+  }
+
+  &__heading {
+    @include list-item-header;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__address {
+    text-align: left;
+  }
+}
+
+.info {
+  @include tablet {
+    width: 47.5%;
+    text-align: left;
+  }
+
+  &__heading {
+    @include list-item-header;
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+.icons {
+  @include icons-block;
+
+  @include tablet {
+    &__right {
+      margin-left: 0.75rem;
+    }
+  }
+
+  &__right {
+    @include icon-item;
+  }
+
+  &__left {
+    @include icon-item;
+  }
+}
+
+.modal-background {
+  @include tablet {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $primary-color-dark;
+    @include height-width(100vh, 100vw);
+    z-index: 2;
+    opacity: 0.5;
+  }
+}
+
+.modal-background {
+  @include tablet {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $primary-color-dark;
+    @include height-width(100vh, 100vw);
+    z-index: 2;
+    opacity: 0.5;
+  }
+}
