@@ -1,6 +1,10 @@
 @use "./mixins" as *;
 @use "./variables" as *;
 
+* {
+  margin: 0;
+}
+
 @font-face {
   font-family: "Newsreader-Regular";
   src: url("../../assets/fonts/Newsreader-Regular.woff") format("woff");
@@ -24,7 +28,7 @@ body {
 
 // PAGE HEADER
 h1 {
-  color: $primary-color-dark;
+  color: $secondary-color;
   @include font("Newsreader-Regular", 1.75rem, 2.25rem, 600);
   @include tablet {
     @include font("Newsreader-Regular", 2rem, 2.5rem, 600);

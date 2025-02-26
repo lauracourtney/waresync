@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import WarehousesPage from "./pages/WarehousesPage.jsx";
 // import InventoryPage from "./pages/InventoryPage/InventoryPage";
 // import Footer from "./components/Footer/Footer";
-// import Header from "./components/Header/Header";
+import Header from "./components/Header/Header";
 // import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 // import "./App.scss";
 // import AddWareHouse from "./components/AddWarehouse/AddWarehouse";
@@ -15,7 +15,7 @@ import WarehousesPage from "./pages/WarehousesPage.jsx";
 export default function App() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         {/* Redirect Home "/" to "/warehouses" */}
         <Route path="/" element={<Navigate to="/warehouses" replace />} />
