@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./styles/main.scss";
+import { Routes, Route, Navigate } from "react-router-dom";
+import WarehousesPage from "./pages/WarehousesPage.jsx";
+// import InventoryPage from "./pages/InventoryPage/InventoryPage";
+// import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+// import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
+// import "./App.scss";
+// import AddWareHouse from "./components/AddWarehouse/AddWarehouse";
+// import EditWareHouse from "./components/EditWarehouse/EditWarehouse";
+// import EditInventoryItem from "./components/EditInventoryItem/EditInventoryItem";
+// import InventoryDetailsPage from "./components/InventoryDetails/InventoryDetails";
+// import AddInventoryItem from "./components/AddInventoryItem/AddInventoryItem";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <Header />
+      <Routes>
+        {/* Redirect Home "/" to "/warehouses" */}
+        <Route path="/" element={<Navigate to="/warehouses" replace />} />
 
-export default App
+        {/* Main Routes */}
+        <Route path="/warehouses" element={<WarehousesPage />} />
+        {/* <Route path="/inventory/add" element={<AddInventoryItem />} />
+        <Route path="/inventory" element={<InventoryPage />} />
+        <Route path="/inventory/:id" element={<InventoryDetailsPage />} />
+        <Route path="/inventory/edit/:id" element={<EditInventoryItem />} />
+        <Route path="/add" element={<AddWareHouse />} />
+        <Route path="/edit/:id" element={<EditWareHouse />} />
+        <Route path="/warehousedetails/:id" element={<WarehouseDetailsPage />} /> */}
+      </Routes>
+      {/* <Footer /> */}
+    </>
+  );
+}
