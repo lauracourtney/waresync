@@ -256,11 +256,11 @@ export default function WarehouseList() {
       {openModal && (
         <>
           <div className="modal-background"></div>
-          {/* <WarehouseModal
+          <WarehouseModal
             warehouse={selectedWarehouse}
             closeModal={closeModal}
             fetchWarehouses={fetchWarehouses}
-          /> */}
+          />
         </>
       )}
     </section>

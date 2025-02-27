@@ -14,7 +14,7 @@
   }
 
   &__search-bar {
-    @include search-bar(url("../../assets/icons/search.svg"));
+    @include search-bar(url("../../assets/imgs/search.svg"));
   }
 
   &__addition-button {
@@ -204,18 +204,6 @@
 
   &__left {
     @include icon-item;
-  }
-}
-
-.modal-background {
-  @include tablet {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: $primary-color-dark;
-    @include height-width(100vh, 100vw);
-    z-index: 2;
-    opacity: 0.5;
   }
 }
 

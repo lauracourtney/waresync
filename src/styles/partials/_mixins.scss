@@ -126,7 +126,7 @@
 
 @mixin add-new-button {
   @include border-details(
-    0.8rem 0.8rem 0.8rem 0.75rem,
+    0.6rem 3rem 0.6rem 0.75rem,
     $primary-color,
     0.15rem solid $primary-color,
     1.5rem
@@ -144,7 +144,7 @@
 
 @mixin list-item-box {
   border-top: 0.15rem solid $secondary-color;
-  padding: 0 1rem;
+  padding: 1rem;
   background-color: $primary-color-light;
 
   @include tablet {
@@ -154,12 +154,11 @@
 }
 
 @mixin list-item-component {
-  padding: 1rem 0;
+  padding: 1rem;
   @include flex-box(space-between, center);
 }
 
 @mixin item-list-contents {
-  padding: 1rem 0;
   @include flex-box(space-between, center);
 
   @include tablet {
@@ -199,8 +198,8 @@
 }
 
 @mixin icons-block {
+  padding-top: 1rem;
   @include flex-box(space-between, center);
-  padding-bottom: 1rem;
 }
 
 @mixin icon-item {

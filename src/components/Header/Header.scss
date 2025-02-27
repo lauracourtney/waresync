@@ -1,6 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/fonts" as *;
+
 .header {
   @include flex-box(none, center, nowrap, column);
   background-color: $background-color-dark;
@@ -8,21 +9,32 @@
   margin: 0;
   width: 100%;
 
+  @include tablet {
+    @include flex-box(space-between, baseline, nowrap, row);
+  }
+
   &__title {
     margin: 2.5rem 0 1.5rem 0;
+
+    @include tablet {
+      margin: 2rem;
+    }
   }
 
   &__menu {
-    @include flex-box(space-between, center);
+    @include flex-box(space-between, center, wrap);
     width: 100%;
-    max-width: 50rem;
-    margin: 0 auto;
     border-radius: 0.5rem;
+
+    @include tablet {
+      width: 50%;
+    }
   }
 
   &__nav {
     @include flex-box(center, center);
     width: 100%;
+    padding: 0 1rem;
   }
 
   &__link {
@@ -30,14 +42,21 @@
     padding: 0.75rem 2rem;
     border-radius: 1.25rem;
     transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+    color: $secondary-color;
+    @include flex-box(center, center);
 
     &:hover {
       background-color: rgba($primary-color-light, 0.1);
     }
-
-    &.active {
-      background-color: $primary-color-dark;
-      color: $primary-color-light;
-    }
   }
+
+  &__section {
+    color: $secondary-color;
+  }
+}
+
+.active {
+  background-color: $primary-color-dark;
+  color: $primary-color-light;
 }

@@ -4,17 +4,17 @@ import "./Header.scss";
 export default function Header({ activePage }) {
   return (
     <header className="header">
-      <h1 className="header__title">WareSync</h1>
+      <h1 className="header__title">WareSync 🧙</h1>
 
       <nav className="header__menu">
         <div className="header__nav">
           <NavLink
             to="/warehouses"
             className={`header__link ${
-              activePage === "warehouses" ? "--active" : ""
+              activePage === "warehouses" ? "active" : ""
             }`}
           >
-            Warehouses
+            <h3 className="header__section">Warehouses</h3>
           </NavLink>
         </div>
 
@@ -22,10 +22,10 @@ export default function Header({ activePage }) {
           <NavLink
             to="/inventory"
             className={`header__link ${
-              activePage === "inventory" ? "--active" : ""
+              activePage === "inventory" ? "active" : ""
             }`}
           >
-            Inventory
+            <h3 className="header__section">Inventory</h3>
           </NavLink>
         </div>
       </nav>
