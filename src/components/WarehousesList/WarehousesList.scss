@@ -9,15 +9,15 @@
     @include item-list-header;
   }
 
-  &__page-title {
+  &__title {
     @include page-title;
   }
 
-  &__search-bar {
+  &__search {
     @include search-bar(url("../../assets/imgs/search.svg"));
   }
 
-  &__addition-button {
+  &__addition {
     @include add-new-button;
   }
 
@@ -25,13 +25,15 @@
     @include list-item-box;
   }
 
-  &__item {
+  &__info {
     @include item-list-contents;
   }
 
   &__left {
     @include flex-box(flex-start, flex-start, nowrap, column);
     width: 45%;
+    min-width: 7rem;
+    padding-bottom: 1rem;
 
     @include tablet {
       @include flex-box(space-between, center, nowrap, row);
@@ -47,7 +49,9 @@
 
   &__right {
     @include flex-box(flex-start, flex-start, nowrap, column);
-    width: 45%;
+    width: 40%;
+    min-width: 9rem;
+    padding-bottom: 1rem;
 
     @include tablet {
       @include flex-box(space-between, center, nowrap, row);
@@ -60,7 +64,7 @@
   }
 }
 
-.categories {
+.warehouses-categories {
   display: none;
   background-color: $background-color;
   @include height-width(2rem, 100%);
@@ -71,15 +75,29 @@
     padding: 0 2rem;
   }
 
-  &__icon {
-    @include sorting-icon;
+  &__warehouse {
+    @include flex-box(center, center);
   }
 
   &__address {
     margin-right: 4rem;
+    @include flex-box(center, center);
+  }
+
+  &__name {
+    @include flex-box(center, center);
+  }
+
+  &__information {
+    @include flex-box(center, center);
+  }
+
+  &__icon {
+    @include sorting-icon;
   }
 }
-.warehouse {
+
+.specific-warehouse {
   @include flex-box(center, flex-start, nowrap, column);
   padding-bottom: 1rem;
 
@@ -131,6 +149,7 @@
     }
   }
 }
+
 .contact {
   @include flex-box(center, flex-start, nowrap, column);
   padding-bottom: 1rem;

@@ -73,6 +73,7 @@
   &__button {
     @include flex-box(space-evenly, center, nowrap, column);
     padding: 0 1rem;
+
     @include tablet {
       padding: 2rem 4rem 1rem 0;
       @include flex-box(flex-end, center);
@@ -82,10 +83,6 @@
   &__cancel {
     @include cancel-button;
     width: 100%;
-
-    @include tablet {
-      width: 4rem;
-    }
   }
 
   &__delete {
@@ -101,7 +98,7 @@
 
     @include tablet {
       width: 4rem;
-      margin-left: 1rem;
+      margin: 0 0 0 1rem;
     }
   }
 }

@@ -1,93 +1,75 @@
 @use "./mixins" as *;
 @use "./variables" as *;
 
-* {
-  margin: 0;
-}
-
 @font-face {
-  font-family: "Newsreader-Light";
-  src: url("../../assets/fonts/Newsreader-Light.woff") format("woff");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Newsreader-Regular";
-  src: url("../../assets/fonts/Newsreader-Regular.woff") format("woff");
+  font-family: "Titillium-Web";
+  src: url("../../assets/fonts/TitilliumWeb-SemiBold.woff") format("woff");
   font-weight: 600;
 }
 
 @font-face {
-  font-family: "Outfit-Light";
-  src: url("../../assets/fonts/Outfit-Medium.woff") format("woff");
+  font-family: "Titillium-Web";
+  src: url("../../assets/fonts/TitilliumWeb-Regular.woff") format("woff");
   font-weight: 400;
-}
-
-@font-face {
-  font-family: "Outfit-Medium";
-  src: url("../../assets/fonts/Outfit-Medium.woff") format("woff");
-  font-weight: 600;
 }
 
 // BODY MEDIUM
 body {
   color: $primary-color-dark;
-  @include font("Newsreader-Light", 0.8125rem, 0.9375rem, 400);
+  @include font("Titillium-Web", 0.8125rem, 0.9375rem, 400);
   @include tablet {
-    @include font("Newsreader-Light", 0.875rem, 1.375rem, 400);
+    @include font("Titillium-Web", 0.875rem, 1.375rem, 400);
   }
 }
 
 // PAGE HEADER
 h1 {
-  color: $secondary-color;
-  @include font("Newsreader-Regular", 1.75rem, 2.25rem, 600);
+  @include font("Titillium-Web", 1.75rem, 2.25rem, 600);
   @include tablet {
-    @include font("Newsreader-Regular", 2rem, 2.5rem, 600);
+    @include font("Titillium-Web", 2rem, 2.5rem, 600);
   }
 }
 
 // SUBHEADER
 h2 {
-  color: $primary-color-dark;
-  @include font("Newsreader-Regular", 1.25rem, 1.75rem, 400);
+  @include font("Titillium-Web", 1.25rem, 1.75rem, 600);
   @include tablet {
-    @include font("Newsreader-Regular", 1.5rem, 2rem, 400);
+    @include font("Titillium-Web", 1.5rem, 2rem, 600);
   }
 }
 
 // LABELS, LINKS, & BUTTONS
 h3 {
-  color: $primary-color-dark;
-  @include font("Newsreader-Regular", 0.8125rem, 1.25rem, 600);
+  @include font("Titillium-Web", 0.8125rem, 1.25rem, 600);
+
   @include tablet {
-    @include font("Newsreader-Regular", 0.875rem, 1.375rem, 600);
+    @include font("Titillium-Web", 0.875rem, 1.375rem, 600);
   }
 }
 
 // TABLE HEADER
 h4 {
-  @include font("Newsreader-Regular", 0.6875rem, 1rem, 600);
+  @include font("Titillium-Web", 0.6875rem, 1rem, 600);
   color: $secondary-color-dark;
   @include tablet {
-    @include font("Newsreader-Regular", 0.75rem, 1.125rem, 600);
+    @include font("Titillium-Web", 0.75rem, 1.125rem, 600);
   }
 }
 
 // H5 IS BODY LARGE
 h5 {
-  color: $primary-color-dark;
-  @include font("Newsreader-Light", 0.9375rem, 1.625rem, 400);
+  @include font("Titillium-Web", 0.9375rem, 1.625rem, 400);
+
   @include tablet {
-    @include font("Newsreader-Light", 1rem, 1.75rem, 400);
+    @include font("Titillium-Web", 1rem, 1.75rem, 400);
   }
 }
 
 // H6 IS BODY SMALL
 h6 {
-  color: $primary-color-dark;
-  @include font("Newsreader-Light", 0.6875rem, 1rem, 400);
+  @include font("Titillium-Web", 0.6875rem, 1rem, 400);
+
   @include tablet {
-    @include font("Newsreader-Light", 0.75rem, 1.125rem, 400);
+    @include font("Titillium-Web", 0.75rem, 1.125rem, 400);
   }
 }
