@@ -31,8 +31,9 @@
 
   &__left {
     @include flex-box(flex-start, flex-start, nowrap, column);
-    width: 40%;
-    min-width: 12.5rem;
+    width: 45%;
+    min-width: 7rem;
+    padding-bottom: 1rem;
 
     @include tablet {
       @include flex-box(space-between, center, nowrap, row);
@@ -50,6 +51,7 @@
     @include flex-box(flex-start, flex-start, nowrap, column);
     width: 40%;
     min-width: 9rem;
+    padding-bottom: 1rem;
 
     @include tablet {
       @include flex-box(space-between, center, nowrap, row);
@@ -73,12 +75,25 @@
     padding: 0 2rem;
   }
 
-  &__icon {
-    @include sorting-icon;
+  &__warehouse {
+    @include flex-box(center, center);
   }
 
   &__address {
     margin-right: 4rem;
+    @include flex-box(center, center);
+  }
+
+  &__name {
+    @include flex-box(center, center);
+  }
+
+  &__information {
+    @include flex-box(center, center);
+  }
+
+  &__icon {
+    @include sorting-icon;
   }
 }
 
