@@ -1,5 +1,7 @@
 @use "./variables" as *;
 
+// ***GENERAL MIXINS***
+
 @mixin font($family, $size, $height, $weight) {
   font-family: $family;
   font-size: $size;
@@ -10,24 +12,6 @@
 @mixin height-width($height, $width) {
   height: $height;
   width: $width;
-}
-
-@mixin in-stock-styling {
-  text-align: left;
-  font-weight: bold;
-  border-radius: 1rem;
-  padding: 0.25rem 0.5rem;
-  background-color: #e0f5ea;
-  color: $supporting-color-G;
-}
-
-@mixin out-of-stock-styling {
-  text-align: left;
-  font-weight: bold;
-  border-radius: 1rem;
-  padding: 0.25rem 0.5rem;
-  background-color: #fdeaea;
-  color: $supporting-color-O;
 }
 
 @mixin flex-box(
@@ -48,6 +32,26 @@
   background-color: $background-color;
   border: $border;
   border-radius: $border-radius;
+}
+
+// ***STOCK INDICATORS***
+
+@mixin in-stock-styling {
+  text-align: left;
+  font-weight: bold;
+  border-radius: 1rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #e0f5ea;
+  color: $supporting-color-G;
+}
+
+@mixin out-of-stock-styling {
+  text-align: left;
+  font-weight: bold;
+  border-radius: 1rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #fdeaea;
+  color: $supporting-color-O;
 }
 
 @mixin list-component {
@@ -105,6 +109,8 @@
   border-bottom: 0.15rem solid $secondary-color;
 }
 
+// ***INPUT BARS AND BUTTONS***
+
 @mixin search-bar($url) {
   @include border-details(
     0.6rem 3rem 0.6rem 0.75rem,
@@ -126,7 +132,7 @@
 
 @mixin add-new-button {
   @include border-details(
-    0.6rem 3rem 0.6rem 0.75rem,
+    0.6rem 0.75rem,
     $primary-color,
     0.15rem solid $primary-color,
     1.5rem
@@ -159,7 +165,7 @@
 }
 
 @mixin item-list-contents {
-  @include flex-box(space-between, center);
+  @include flex-box(space-between, center, wrap, row);
 
   @include tablet {
     @include flex-box(space-between, center);

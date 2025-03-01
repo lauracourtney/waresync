@@ -102,49 +102,49 @@ export default function WarehouseList() {
     <section className="warehouses">
       <div className="warehouses__component">
         <div className="warehouses__header">
-          <h1 className="warehouses__page-title">Warehouses</h1>
+          <h1 className="warehouses__title">Warehouses</h1>
           <input
             placeholder="Search..."
             type="search"
-            className="warehouses__search-bar"
+            className="warehouses__search"
             value={searchTerm}
             onChange={handleSearch}
           />
-          <button onClick={handleClick} className="warehouses__addition-button">
+          <button onClick={handleClick} className="warehouses__addition">
             + Add New Warehouse
           </button>
         </div>
 
         {/* Sorting Headers */}
-        <div className="categories">
+        <div className="warehouses-categories">
           <h4
-            className="categories__warehouse"
+            className="warehouses-categories__warehouse"
             onClick={() => handleSort("warehouse_name")}
           >
             WAREHOUSE
             <svg
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              className="categories__icon"
+              className="warehouses-categories__icon"
             >
               <path d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z" />
             </svg>
           </h4>
           <h4
-            className="categories__address"
+            className="warehouses-categories__address"
             onClick={() => handleSort("address")}
           >
             ADDRESS{" "}
             <svg
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              className="categories__icon"
+              className="warehouses-categories__icon"
             >
               <path d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z" />
             </svg>
           </h4>
           <h4
-            className="categories__name"
+            className="warehouses-categories__name"
             onClick={() => handleSort("contact_name")}
           >
             CONTACT NAME{" "}
@@ -157,7 +157,7 @@ export default function WarehouseList() {
             </svg>
           </h4>
           <h4
-            className="categories__information"
+            className="warehouses-categories__information"
             onClick={() => handleSort("contact_info")}
           >
             CONTACT INFORMATION{" "}
@@ -169,24 +169,24 @@ export default function WarehouseList() {
               <path d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z" />
             </svg>
           </h4>
-          <h4 className="categories__actions">ACTIONS</h4>
+          <h4 className="warehouses-categories__actions">ACTIONS</h4>
         </div>
 
         {filteredWarehouses.map((warehouse) => (
           <div className="warehouses__details" key={warehouse.id}>
-            <div className="warehouses__item">
+            <div className="warehouses__info">
               <div className="warehouses__left">
-                <div className="warehouse">
-                  <h4 className="warehouse__heading">WAREHOUSE</h4>
+                <div className="specific-warehouse">
+                  <h4 className="specific-warehouse__heading">WAREHOUSE</h4>
                   <Link
                     to={`/warehousedetails/${warehouse.id}`}
-                    className="warehouse__link"
+                    className="specific-warehouse__link"
                   >
-                    <p className="warehouse__location">
+                    <p className="specific-warehouse__location">
                       {warehouse.warehouse_name}
                     </p>
                     <svg
-                      className="warehouse__icon"
+                      className="specific-warehouse__icon"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -255,7 +255,7 @@ export default function WarehouseList() {
 
       {openModal && (
         <>
-          <div className="modal-background"></div>
+          <div className="modal__background"></div>
           <WarehouseModal
             warehouse={selectedWarehouse}
             closeModal={closeModal}

@@ -9,15 +9,15 @@
     @include item-list-header;
   }
 
-  &__page-title {
+  &__title {
     @include page-title;
   }
 
-  &__search-bar {
+  &__search {
     @include search-bar(url("../../assets/imgs/search.svg"));
   }
 
-  &__addition-button {
+  &__addition {
     @include add-new-button;
   }
 
@@ -25,13 +25,14 @@
     @include list-item-box;
   }
 
-  &__item {
+  &__info {
     @include item-list-contents;
   }
 
   &__left {
     @include flex-box(flex-start, flex-start, nowrap, column);
-    width: 45%;
+    width: 40%;
+    min-width: 12.5rem;
 
     @include tablet {
       @include flex-box(space-between, center, nowrap, row);
@@ -47,7 +48,8 @@
 
   &__right {
     @include flex-box(flex-start, flex-start, nowrap, column);
-    width: 45%;
+    width: 40%;
+    min-width: 9rem;
 
     @include tablet {
       @include flex-box(space-between, center, nowrap, row);
@@ -60,7 +62,7 @@
   }
 }
 
-.categories {
+.warehouses-categories {
   display: none;
   background-color: $background-color;
   @include height-width(2rem, 100%);
@@ -79,7 +81,8 @@
     margin-right: 4rem;
   }
 }
-.warehouse {
+
+.specific-warehouse {
   @include flex-box(center, flex-start, nowrap, column);
   padding-bottom: 1rem;
 
@@ -131,6 +134,7 @@
     }
   }
 }
+
 .contact {
   @include flex-box(center, flex-start, nowrap, column);
   padding-bottom: 1rem;
