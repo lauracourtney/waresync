@@ -13,12 +13,28 @@
     @include page-title;
   }
 
+  &__top {
+    width: 100%;
+
+    @include tablet {
+      @include flex-box(space-between, center);
+    }
+  }
+
   &__search {
     @include search-bar(url("../../assets/imgs/search.svg"));
+
+    @include tablet {
+      margin-right: 0.5rem;
+    }
   }
 
   &__addition {
     @include add-new-button;
+
+    @include tablet {
+      margin-left: 0.5rem;
+    }
   }
 
   &__details {
@@ -27,35 +43,37 @@
 
   &__info {
     @include item-list-contents;
+    width: 85%;
   }
 
   &__left {
-    @include flex-box(flex-start, flex-start, nowrap, column);
     width: 45%;
     min-width: 7rem;
     padding-bottom: 1rem;
+    @include flex-box(flex-start, flex-start, nowrap, column);
 
     @include tablet {
+      width: 46%;
+      padding: 0;
       @include flex-box(space-between, center, nowrap, row);
-      width: 50%;
-      padding-right: 3rem;
     }
 
     @include desktop {
-      padding-right: 0rem;
       width: 44%;
+      padding-right: 0rem;
     }
   }
 
   &__right {
-    @include flex-box(flex-start, flex-start, nowrap, column);
     width: 40%;
     min-width: 9rem;
     padding-bottom: 1rem;
+    @include flex-box(flex-start, flex-start, nowrap, column);
 
     @include tablet {
+      width: 50%;
+      padding: 0;
       @include flex-box(space-between, center, nowrap, row);
-      width: 49%;
     }
 
     @include desktop {
@@ -67,29 +85,37 @@
 .warehouses-categories {
   display: none;
   background-color: $background-color;
-  @include height-width(2rem, 100%);
   padding: 0 1rem;
+  @include height-width(2rem, 100%);
 
   @include tablet {
+    padding: 0;
     @include flex-box(space-between, center);
-    padding: 0 2rem;
   }
 
   &__warehouse {
     @include flex-box(center, center);
+    width: 20%;
   }
 
   &__address {
-    margin-right: 4rem;
     @include flex-box(center, center);
+    width: 20%;
   }
 
   &__name {
     @include flex-box(center, center);
+    width: 20%;
   }
 
   &__information {
     @include flex-box(center, center);
+    width: 24%;
+  }
+
+  &__actions {
+    width: 16%;
+    text-align: center;
   }
 
   &__icon {
@@ -98,8 +124,8 @@
 }
 
 .specific-warehouse {
-  @include flex-box(center, flex-start, nowrap, column);
   padding-bottom: 1rem;
+  @include flex-box(center, flex-start, nowrap, column);
 
   @include tablet {
     width: 47.5%;
@@ -120,11 +146,11 @@
   }
 
   &__link {
-    @include flex-box(center, center);
     text-decoration: none;
     align-items: center;
     gap: 0.25rem;
     transition: all 0.3s ease-in-out;
+    @include flex-box(center, center);
 
     &:hover {
       .warehouse__icon {
@@ -135,10 +161,10 @@
   }
 
   &__icon {
-    @include height-width(1rem, 1rem);
     fill: $primary-color;
     margin-left: 0.25rem;
     transition: transform 0.3s ease-in-out;
+    @include height-width(1rem, 1rem);
   }
 
   &__heading {
@@ -151,9 +177,9 @@
 }
 
 .contact {
-  @include flex-box(center, flex-start, nowrap, column);
   padding-bottom: 1rem;
   width: 100%;
+  @include flex-box(center, flex-start, nowrap, column);
 
   @include tablet {
     width: 45%;
@@ -232,8 +258,8 @@
     top: 0;
     left: 0;
     background-color: $primary-color-dark;
-    @include height-width(100vh, 100vw);
-    z-index: 2;
     opacity: 0.5;
+    z-index: 2;
+    @include height-width(100vh, 100vw);
   }
 }

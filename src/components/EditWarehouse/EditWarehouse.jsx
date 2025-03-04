@@ -191,12 +191,15 @@ function EditWareHouse() {
         </Link>
         <h1 className="edit-warehouse__title">Edit Warehouse</h1>
       </div>
+
+      <div className="edit-warehouse__border"></div>
+
       <form className="edit-warehouse__form" onSubmit={handleSubmit}>
         <div className="edit-warehouse__details">
           <h2 className="edit-warehouse__subheader">Warehouse Details</h2>
           <div className="edit-warehouse__item">
             <label className="edit-warehouse__label">
-              Warehouse Name:
+              <h3 className="edit-warehouse__subtitle">Warehouse Name</h3>
               <input
                 className={`edit-warehouse__input ${
                   !isFormValid && !formData.warehouse_name
@@ -215,10 +218,12 @@ function EditWareHouse() {
 
           <div className="edit-warehouse__item">
             <label className="edit-warehouse__label">
-              Street Address
+              <h3 className="edit-warehouse__subtitle">Street Address</h3>
               <input
-                className={`form__detail ${
-                  !isFormValid && !formData.address ? "form__detail--error" : ""
+                className={`edit-warehouse__input ${
+                  !isFormValid && !formData.address
+                    ? "edit-warehouse__input--error"
+                    : ""
                 }`}
                 type="text"
                 name="address"
@@ -232,7 +237,7 @@ function EditWareHouse() {
 
           <div className="edit-warehouse__item">
             <label className="edit-warehouse__label">
-              City
+              <h3 className="edit-warehouse__subtitle">City</h3>
               <input
                 className={`edit-warehouse__input ${
                   !isFormValid && !formData.city
@@ -251,7 +256,7 @@ function EditWareHouse() {
 
           <div className="edit-warehouse__item">
             <label className="edit-warehouse__label">
-              Country
+              <h3 className="edit-warehouse__subtitle">Country</h3>
               <input
                 className={`edit-warehouse__input ${
                   !isFormValid && !formData.country
@@ -273,7 +278,7 @@ function EditWareHouse() {
 
           <div className="edit-warehouse__item">
             <label className="edit-warehouse__label">
-              Contact Name
+              <h3 className="edit-warehouse__subtitle">Contact Name</h3>
               <input
                 className={`edit-warehouse__input ${
                   !isFormValid && !formData.contact_name
@@ -292,7 +297,7 @@ function EditWareHouse() {
 
           <div className="edit-warehouse__item">
             <label className="edit-warehouse__label">
-              Position
+              <h3 className="edit-warehouse__subtitle">Position</h3>
               <input
                 className={`edit-warehouse__input ${
                   !isFormValid && !formData.contact_position
@@ -313,7 +318,7 @@ function EditWareHouse() {
 
           <div className="edit-warehouse__item">
             <label className="edit-warehouse__label">
-              Phone Number
+              <h3 className="edit-warehouse__subtitle">Phone Number</h3>
               <input
                 className={`edit-warehouse__input ${
                   !isFormValid ? "edit-warehouse__input--error" : ""
@@ -331,7 +336,7 @@ function EditWareHouse() {
 
           <div className="edit-warehouse__item">
             <label className="edit-warehouse__label">
-              Email
+              <h3 className="edit-warehouse__subtitle">Email</h3>
               <input
                 className={`edit-warehouse__input ${
                   !isFormValid ? "edit-warehouse__input--error" : ""

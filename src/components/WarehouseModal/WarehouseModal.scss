@@ -4,33 +4,17 @@
 .warehouse-modal {
   background-color: $primary-color-light;
   position: fixed;
-  position: fixed;
   top: 0;
   left: 0;
-  @include height-width(100%, 100%);
   z-index: 3;
+  @include height-width(100%, 100%);
 
   @include tablet {
-    @include height-width(16rem, auto);
     top: 12.5rem;
     right: 2rem;
     left: 2rem;
     margin: 0 1rem;
-  }
-
-  @include desktop {
-    right: 20rem;
-    left: 20rem;
-  }
-  @include height-width(100%, 100%);
-  z-index: 3;
-
-  @include tablet {
     @include height-width(16rem, auto);
-    top: 12.5rem;
-    right: 2rem;
-    left: 2rem;
-    margin: 0 1rem;
   }
 
   @include desktop {
@@ -39,10 +23,10 @@
   }
 
   &__close {
-    @include height-width(1.5rem, 1.5rem);
     margin: 1rem 1rem 0 1rem;
     display: flex;
     justify-self: flex-end;
+    @include height-width(1.5rem, 1.5rem);
   }
 
   &__upper {
@@ -71,8 +55,8 @@
   }
 
   &__button {
-    @include flex-box(space-evenly, center, nowrap, column);
     padding: 0 1rem;
+    @include flex-box(space-evenly, center, nowrap, column);
 
     @include tablet {
       padding: 2rem 4rem 1rem 0;
@@ -81,20 +65,20 @@
   }
 
   &__cancel {
-    @include cancel-button;
     width: 100%;
+    @include cancel-button;
   }
 
   &__delete {
+    color: $primary-color-light;
+    width: 100%;
+    margin-top: 2rem;
     @include border-details(
       0.5rem 0,
       $supporting-color-O,
       0.15rem solid $supporting-color-O,
       1.5rem
     );
-    color: $primary-color-light;
-    width: 100%;
-    margin-top: 2rem;
 
     @include tablet {
       width: 4rem;

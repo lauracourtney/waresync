@@ -103,16 +103,19 @@ export default function WarehouseList() {
       <div className="warehouses__component">
         <div className="warehouses__header">
           <h1 className="warehouses__title">Warehouses</h1>
-          <input
-            placeholder="Search..."
-            type="search"
-            className="warehouses__search"
-            value={searchTerm}
-            onChange={handleSearch}
-          />
-          <button onClick={handleClick} className="warehouses__addition">
-            + Add New Warehouse
-          </button>
+
+          <div className="warehouses__top">
+            <input
+              placeholder="Search..."
+              type="search"
+              className="warehouses__search"
+              value={searchTerm}
+              onChange={handleSearch}
+            />
+            <button onClick={handleClick} className="warehouses__addition">
+              + Add New Warehouse
+            </button>
+          </div>
         </div>
 
         {/* Sorting Headers */}

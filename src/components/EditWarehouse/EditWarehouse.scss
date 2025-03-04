@@ -26,23 +26,51 @@
     text-align: center;
   }
 
-  // ***WAREHOUSE DETAILS***
+  &__border {
+    @include grey-border;
+  }
 
-  &__form {
+  // ***WAREHOUSE DETAILS***
+  &__subheader {
     padding: 1rem;
   }
 
-  &__subheader {
-    padding: 1rem 1rem 0 1rem;
-  }
-
   &__details {
+    @include grey-border;
+    padding-bottom: 1rem;
+
     @include tablet {
       width: 50%;
       &--division {
         border-left: 0.1rem solid $secondary-color;
       }
     }
+  }
+
+  &__item {
+    gap: 0.2rem;
+    padding: 0 1.3rem 1rem 1.3rem;
+  }
+
+  &__label {
+    @include flex-box(center, flex-start, nowrap, column);
+    width: 100%;
+  }
+
+  &__input {
+    @include search-bar(none);
+    margin: 0rem;
+    padding: 0.5rem;
+  }
+
+  &__buttons {
+    @include flex-box(center, center);
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  &__button {
+    @include add-new-button;
   }
 }
 
