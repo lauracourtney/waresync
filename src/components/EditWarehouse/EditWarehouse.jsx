@@ -6,7 +6,7 @@ import errorIcon from "../../assets/imgs/error.svg";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import backArrow from "../../assets/imgs/arrow_back.svg";
 
-function EditWareHouse() {
+export default function EditWareHouse() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     warehouse_name: "",
@@ -173,7 +173,7 @@ function EditWareHouse() {
   };
 
   const handleCancel = () => {
-    navigate(`/warehousedetails/${id}`);
+    navigate(`/warehouses`);
   };
 
   if (warehouseDetails === null) {
@@ -186,7 +186,7 @@ function EditWareHouse() {
   return (
     <section className="edit-warehouse">
       <div className="edit-warehouse__header">
-        <Link className="edit-warehouse__arrow" to={`/warehousedetails/${id}`}>
+        <Link className="edit-warehouse__arrow" to={`/warehouses`}>
           <img src={backArrow}></img>
         </Link>
         <h1 className="edit-warehouse__title">Edit Warehouse</h1>
@@ -276,6 +276,7 @@ function EditWareHouse() {
               {!formData.country && <p className="errors">{emptyError}</p>}
             </div>
           </div>
+
           <div className="edit-warehouse__contact">
             <h2 className="edit-warehouse__subheader">Contact Details</h2>
 
@@ -368,10 +369,10 @@ function EditWareHouse() {
               className="edit-warehouse__button edit-warehouse__button--cancel"
               type="button"
             >
-              Cancel
+              <h3>Cancel</h3>
             </button>
             <button className="edit-warehouse__button" type="submit">
-              Save
+              <h3>Save</h3>
             </button>
           </div>
         </div>
@@ -379,4 +380,3 @@ function EditWareHouse() {
     </section>
   );
 }
-export default EditWareHouse;

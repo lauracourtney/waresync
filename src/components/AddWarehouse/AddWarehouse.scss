@@ -1,1 +1,99 @@
-@use "../../styles/partials/global";
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.add-warehouse {
+  background-color: #f9f9f9;
+  margin: 1rem;
+  z-index: 2;
+  position: relative;
+  top: -5rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.1rem;
+
+  @include desktop {
+    margin: 5rem;
+    top: -10rem;
+  }
+
+  &__header {
+    padding: 1rem;
+    @include flex-box(flex-start, center);
+  }
+
+  &__title {
+    padding-left: 1rem;
+  }
+
+  &__border {
+    @include grey-border;
+  }
+
+  &__middle {
+    @include tablet {
+      @include flex-box(space-evenly, center);
+    }
+  }
+
+  &__subheader {
+    padding: 1rem;
+  }
+
+  &__details {
+    @include grey-border;
+    padding-bottom: 1rem;
+
+    @include tablet {
+      width: 50%;
+      padding: 0;
+      @include grey-border-right;
+      border-bottom: 0;
+
+      &--division {
+        border-left: 0.1rem solid $secondary-color;
+      }
+    }
+  }
+
+  &__contact {
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &__item {
+    gap: 0.2rem;
+    padding: 0 1.3rem 1rem 1.3rem;
+  }
+
+  &__label {
+    @include flex-box(center, flex-start, nowrap, column);
+    width: 100%;
+  }
+
+  &__input {
+    @include search-bar(none);
+    margin: 0rem;
+    padding: 0.5rem;
+  }
+
+  &__bottom {
+    background-color: $secondary-color;
+  }
+
+  &__buttons {
+    @include flex-box(center, center);
+    gap: 1rem;
+    padding: 1rem;
+
+    @include tablet {
+      width: 50%;
+      justify-self: flex-end;
+      padding: 1.5rem;
+    }
+  }
+
+  &__button {
+    @include add-new-button;
+  }
+}
