@@ -128,6 +128,10 @@
   border-bottom: 0.15rem solid $secondary-color;
 }
 
+@mixin grey-border-right {
+  border-right: 0.15rem solid $secondary-color;
+}
+
 // ***FIXED: Removed duplicate `padding` and moved `margin-bottom` above `@include tablet`***
 @mixin search-bar($url) {
   width: 100%;

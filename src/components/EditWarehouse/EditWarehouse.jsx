@@ -162,10 +162,10 @@ function EditWareHouse() {
 
     try {
       await axios.put(
-        `http://localhost:8080/api/warehouses/${id}`,
+        `http://localhost:3000/api/warehouses/${id}`,
         updatedFormData
       );
-      navigate(`/warehousedetails/${id}`, { state: { refresh: true } });
+      navigate(`/warehouses`, { state: { refresh: true } });
     } catch (error) {
       console.error("Failed to update warehouse:", error.message);
       setError("Failed to update warehouse. Please try again later.");
@@ -195,175 +195,185 @@ function EditWareHouse() {
       <div className="edit-warehouse__border"></div>
 
       <form className="edit-warehouse__form" onSubmit={handleSubmit}>
-        <div className="edit-warehouse__details">
-          <h2 className="edit-warehouse__subheader">Warehouse Details</h2>
-          <div className="edit-warehouse__item">
-            <label className="edit-warehouse__label">
-              <h3 className="edit-warehouse__subtitle">Warehouse Name</h3>
-              <input
-                className={`edit-warehouse__input ${
-                  !isFormValid && !formData.warehouse_name
-                    ? "edit-warehouse__input--error"
-                    : ""
-                }`}
-                name="warehouse_name"
-                type="text"
-                placeholder={formData.warehouse_name}
-                value={formData.warehouse_name}
-                onChange={handleChange}
-              />
-            </label>
-            {!formData.warehouse_name && <p className="errors">{emptyError}</p>}
-          </div>
+        <div className="edit-warehouse__middle">
+          <div className="edit-warehouse__details">
+            <h2 className="edit-warehouse__subheader">Warehouse Details</h2>
+            <div className="edit-warehouse__item">
+              <label className="edit-warehouse__label">
+                <h3 className="edit-warehouse__subtitle">Warehouse Name</h3>
+                <input
+                  className={`edit-warehouse__input ${
+                    !isFormValid && !formData.warehouse_name
+                      ? "edit-warehouse__input--error"
+                      : ""
+                  }`}
+                  name="warehouse_name"
+                  type="text"
+                  placeholder={formData.warehouse_name}
+                  value={formData.warehouse_name}
+                  onChange={handleChange}
+                />
+              </label>
+              {!formData.warehouse_name && (
+                <p className="errors">{emptyError}</p>
+              )}
+            </div>
 
-          <div className="edit-warehouse__item">
-            <label className="edit-warehouse__label">
-              <h3 className="edit-warehouse__subtitle">Street Address</h3>
-              <input
-                className={`edit-warehouse__input ${
-                  !isFormValid && !formData.address
-                    ? "edit-warehouse__input--error"
-                    : ""
-                }`}
-                type="text"
-                name="address"
-                placeholder={formData.address}
-                value={formData.address}
-                onChange={handleChange}
-              />
-            </label>
-            {!formData.address && <p className="errors">{emptyError}</p>}
-          </div>
+            <div className="edit-warehouse__item">
+              <label className="edit-warehouse__label">
+                <h3 className="edit-warehouse__subtitle">Street Address</h3>
+                <input
+                  className={`edit-warehouse__input ${
+                    !isFormValid && !formData.address
+                      ? "edit-warehouse__input--error"
+                      : ""
+                  }`}
+                  type="text"
+                  name="address"
+                  placeholder={formData.address}
+                  value={formData.address}
+                  onChange={handleChange}
+                />
+              </label>
+              {!formData.address && <p className="errors">{emptyError}</p>}
+            </div>
 
-          <div className="edit-warehouse__item">
-            <label className="edit-warehouse__label">
-              <h3 className="edit-warehouse__subtitle">City</h3>
-              <input
-                className={`edit-warehouse__input ${
-                  !isFormValid && !formData.city
-                    ? "edit-warehouse__input--error"
-                    : ""
-                }`}
-                type="text"
-                name="city"
-                placeholder={formData.city}
-                value={formData.city}
-                onChange={handleChange}
-              />
-            </label>
-            {!formData.city && <p className="errors">{emptyError}</p>}
-          </div>
+            <div className="edit-warehouse__item">
+              <label className="edit-warehouse__label">
+                <h3 className="edit-warehouse__subtitle">City</h3>
+                <input
+                  className={`edit-warehouse__input ${
+                    !isFormValid && !formData.city
+                      ? "edit-warehouse__input--error"
+                      : ""
+                  }`}
+                  type="text"
+                  name="city"
+                  placeholder={formData.city}
+                  value={formData.city}
+                  onChange={handleChange}
+                />
+              </label>
+              {!formData.city && <p className="errors">{emptyError}</p>}
+            </div>
 
-          <div className="edit-warehouse__item">
-            <label className="edit-warehouse__label">
-              <h3 className="edit-warehouse__subtitle">Country</h3>
-              <input
-                className={`edit-warehouse__input ${
-                  !isFormValid && !formData.country
-                    ? "edit-warehouse__input--error"
-                    : ""
-                }`}
-                type="text"
-                name="country"
-                placeholder={formData.country}
-                value={formData.country}
-                onChange={handleChange}
-              />
-            </label>
-            {!formData.country && <p className="errors">{emptyError}</p>}
+            <div className="edit-warehouse__item">
+              <label className="edit-warehouse__label">
+                <h3 className="edit-warehouse__subtitle">Country</h3>
+                <input
+                  className={`edit-warehouse__input ${
+                    !isFormValid && !formData.country
+                      ? "edit-warehouse__input--error"
+                      : ""
+                  }`}
+                  type="text"
+                  name="country"
+                  placeholder={formData.country}
+                  value={formData.country}
+                  onChange={handleChange}
+                />
+              </label>
+              {!formData.country && <p className="errors">{emptyError}</p>}
+            </div>
+          </div>
+          <div className="edit-warehouse__contact">
+            <h2 className="edit-warehouse__subheader">Contact Details</h2>
+
+            <div className="edit-warehouse__item">
+              <label className="edit-warehouse__label">
+                <h3 className="edit-warehouse__subtitle">Contact Name</h3>
+                <input
+                  className={`edit-warehouse__input ${
+                    !isFormValid && !formData.contact_name
+                      ? "edit-warehouse__input--error"
+                      : ""
+                  }`}
+                  type="text"
+                  name="contact_name"
+                  placeholder={formData.contact_name}
+                  value={formData.contact_name}
+                  onChange={handleChange}
+                />
+              </label>
+              {!formData.contact_name && <p className="errors">{emptyError}</p>}
+            </div>
+
+            <div className="edit-warehouse__item">
+              <label className="edit-warehouse__label">
+                <h3 className="edit-warehouse__subtitle">Position</h3>
+                <input
+                  className={`edit-warehouse__input ${
+                    !isFormValid && !formData.contact_position
+                      ? "edit-warehouse__input--error"
+                      : ""
+                  }`}
+                  type="text"
+                  name="contact_position"
+                  placeholder={formData.contact_position}
+                  value={formData.contact_position}
+                  onChange={handleChange}
+                />
+              </label>
+              {!formData.contact_position && (
+                <p className="errors">{emptyError}</p>
+              )}
+            </div>
+
+            <div className="edit-warehouse__item">
+              <label className="edit-warehouse__label">
+                <h3 className="edit-warehouse__subtitle">Phone Number</h3>
+                <input
+                  className={`edit-warehouse__input ${
+                    !isFormValid ? "edit-warehouse__input--error" : ""
+                  }`}
+                  type="text"
+                  name="contact_phone"
+                  placeholder={formData.contact_phone}
+                  value={formData.contact_phone}
+                  onChange={handleChange}
+                />
+              </label>
+              {!formData.contact_phone && (
+                <p className="errors">{emptyError}</p>
+              )}
+              {phoneError && <p className="errors">{phoneError}</p>}
+            </div>
+
+            <div className="edit-warehouse__item">
+              <label className="edit-warehouse__label">
+                <h3 className="edit-warehouse__subtitle">Email</h3>
+                <input
+                  className={`edit-warehouse__input ${
+                    !isFormValid ? "edit-warehouse__input--error" : ""
+                  }`}
+                  type="text"
+                  name="contact_email"
+                  placeholder={formData.contact_email}
+                  value={formData.contact_email}
+                  onChange={handleChange}
+                />
+              </label>
+              {!formData.contact_email && (
+                <p className="errors">{emptyError}</p>
+              )}
+              {emailError && <p className="errors">{emailError}</p>}
+            </div>
           </div>
         </div>
-        <div className="edit-warehouse__contact">
-          <h2 className="edit-warehouse__subheader">Contact Details</h2>
 
-          <div className="edit-warehouse__item">
-            <label className="edit-warehouse__label">
-              <h3 className="edit-warehouse__subtitle">Contact Name</h3>
-              <input
-                className={`edit-warehouse__input ${
-                  !isFormValid && !formData.contact_name
-                    ? "edit-warehouse__input--error"
-                    : ""
-                }`}
-                type="text"
-                name="contact_name"
-                placeholder={formData.contact_name}
-                value={formData.contact_name}
-                onChange={handleChange}
-              />
-            </label>
-            {!formData.contact_name && <p className="errors">{emptyError}</p>}
+        <div className="edit-warehouse__bottom">
+          <div className="edit-warehouse__buttons">
+            <button
+              onClick={handleCancel}
+              className="edit-warehouse__button edit-warehouse__button--cancel"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button className="edit-warehouse__button" type="submit">
+              Save
+            </button>
           </div>
-
-          <div className="edit-warehouse__item">
-            <label className="edit-warehouse__label">
-              <h3 className="edit-warehouse__subtitle">Position</h3>
-              <input
-                className={`edit-warehouse__input ${
-                  !isFormValid && !formData.contact_position
-                    ? "edit-warehouse__input--error"
-                    : ""
-                }`}
-                type="text"
-                name="contact_position"
-                placeholder={formData.contact_position}
-                value={formData.contact_position}
-                onChange={handleChange}
-              />
-            </label>
-            {!formData.contact_position && (
-              <p className="errors">{emptyError}</p>
-            )}
-          </div>
-
-          <div className="edit-warehouse__item">
-            <label className="edit-warehouse__label">
-              <h3 className="edit-warehouse__subtitle">Phone Number</h3>
-              <input
-                className={`edit-warehouse__input ${
-                  !isFormValid ? "edit-warehouse__input--error" : ""
-                }`}
-                type="text"
-                name="contact_phone"
-                placeholder={formData.contact_phone}
-                value={formData.contact_phone}
-                onChange={handleChange}
-              />
-            </label>
-            {!formData.contact_phone && <p className="errors">{emptyError}</p>}
-            {phoneError && <p className="errors">{phoneError}</p>}
-          </div>
-
-          <div className="edit-warehouse__item">
-            <label className="edit-warehouse__label">
-              <h3 className="edit-warehouse__subtitle">Email</h3>
-              <input
-                className={`edit-warehouse__input ${
-                  !isFormValid ? "edit-warehouse__input--error" : ""
-                }`}
-                type="text"
-                name="contact_email"
-                placeholder={formData.contact_email}
-                value={formData.contact_email}
-                onChange={handleChange}
-              />
-            </label>
-            {!formData.contact_email && <p className="errors">{emptyError}</p>}
-            {emailError && <p className="errors">{emailError}</p>}
-          </div>
-        </div>
-
-        <div className="edit-warehouse__buttons">
-          <button
-            onClick={handleCancel}
-            className="edit-warehouse__button edit-warehouse__button--cancel"
-            type="button"
-          >
-            Cancel
-          </button>
-          <button className="edit-warehouse__button" type="submit">
-            Save
-          </button>
         </div>
       </form>
     </section>

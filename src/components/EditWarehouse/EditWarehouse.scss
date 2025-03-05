@@ -16,21 +16,25 @@
     top: -10rem;
   }
 
-  // ***FORM HEADER***
   &__header {
     padding: 1rem;
+    @include flex-box(flex-start, center);
   }
 
   &__title {
-    padding-top: 1rem;
-    text-align: center;
+    padding-left: 1rem;
   }
 
   &__border {
     @include grey-border;
   }
 
-  // ***WAREHOUSE DETAILS***
+  &__middle {
+    @include tablet {
+      @include flex-box(space-evenly, center);
+    }
+  }
+
   &__subheader {
     padding: 1rem;
   }
@@ -41,9 +45,19 @@
 
     @include tablet {
       width: 50%;
+      padding: 0;
+      @include grey-border-right;
+      border-bottom: 0;
+
       &--division {
         border-left: 0.1rem solid $secondary-color;
       }
+    }
+  }
+
+  &__contact {
+    @include tablet {
+      width: 50%;
     }
   }
 
@@ -63,10 +77,20 @@
     padding: 0.5rem;
   }
 
+  &__bottom {
+    background-color: $secondary-color;
+  }
+
   &__buttons {
     @include flex-box(center, center);
     gap: 1rem;
     padding: 1rem;
+
+    @include tablet {
+      width: 50%;
+      justify-self: flex-end;
+      padding: 1.5rem;
+    }
   }
 
   &__button {
