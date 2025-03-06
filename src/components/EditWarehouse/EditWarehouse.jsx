@@ -54,7 +54,7 @@ export default function EditWareHouse() {
       if (!validPhoneFormat.test(value) && value !== "") {
         setPhoneError(
           <>
-            <img className="error-icon" src={errorIcon} />
+            <img className="error__icon" src={errorIcon} />
             Please enter a valid phone number (e.g., +1 (123) 456-7890)
           </>
         );
@@ -69,7 +69,7 @@ export default function EditWareHouse() {
       if (!validEmailFormat.test(value) && value !== "") {
         setEmailError(
           <>
-            <img className="error-icon" src={errorIcon} />
+            <img className="error__icon" src={errorIcon} />
             Please enter a valid email (e.g., example@example.com)
           </>
         );
@@ -105,7 +105,7 @@ export default function EditWareHouse() {
       setIsFormValid(false);
       setEmptyError(
         <>
-          <img className="error-icon" src={errorIcon} /> This field is required
+          <img className="error__icon" src={errorIcon} /> This field is required
         </>
       );
       return;
@@ -117,7 +117,7 @@ export default function EditWareHouse() {
     ) {
       setPhoneError(
         <>
-          <img className="error-icon" src={errorIcon} />
+          <img className="error__icon" src={errorIcon} />
           Please enter a valid phone number
         </>
       );
@@ -131,7 +131,7 @@ export default function EditWareHouse() {
     ) {
       setEmailError(
         <>
-          <img className="error-icon" src={errorIcon} />
+          <img className="error__icon" src={errorIcon} />
           Please enter a valid email
         </>
       );
@@ -215,7 +215,7 @@ export default function EditWareHouse() {
                 />
               </label>
               {!formData.warehouse_name && (
-                <p className="errors">{emptyError}</p>
+                <p className="error">{emptyError}</p>
               )}
             </div>
 
@@ -235,7 +235,7 @@ export default function EditWareHouse() {
                   onChange={handleChange}
                 />
               </label>
-              {!formData.address && <p className="errors">{emptyError}</p>}
+              {!formData.address && <p className="error">{emptyError}</p>}
             </div>
 
             <div className="edit-warehouse__item">
@@ -254,7 +254,7 @@ export default function EditWareHouse() {
                   onChange={handleChange}
                 />
               </label>
-              {!formData.city && <p className="errors">{emptyError}</p>}
+              {!formData.city && <p className="error">{emptyError}</p>}
             </div>
 
             <div className="edit-warehouse__item">
@@ -273,7 +273,7 @@ export default function EditWareHouse() {
                   onChange={handleChange}
                 />
               </label>
-              {!formData.country && <p className="errors">{emptyError}</p>}
+              {!formData.country && <p className="error">{emptyError}</p>}
             </div>
           </div>
 
@@ -296,7 +296,7 @@ export default function EditWareHouse() {
                   onChange={handleChange}
                 />
               </label>
-              {!formData.contact_name && <p className="errors">{emptyError}</p>}
+              {!formData.contact_name && <p className="error">{emptyError}</p>}
             </div>
 
             <div className="edit-warehouse__item">
@@ -316,7 +316,7 @@ export default function EditWareHouse() {
                 />
               </label>
               {!formData.contact_position && (
-                <p className="errors">{emptyError}</p>
+                <p className="error">{emptyError}</p>
               )}
             </div>
 
@@ -334,10 +334,8 @@ export default function EditWareHouse() {
                   onChange={handleChange}
                 />
               </label>
-              {!formData.contact_phone && (
-                <p className="errors">{emptyError}</p>
-              )}
-              {phoneError && <p className="errors">{phoneError}</p>}
+              {!formData.contact_phone && <p className="error">{emptyError}</p>}
+              {phoneError && <p className="error">{phoneError}</p>}
             </div>
 
             <div className="edit-warehouse__item">
@@ -354,10 +352,8 @@ export default function EditWareHouse() {
                   onChange={handleChange}
                 />
               </label>
-              {!formData.contact_email && (
-                <p className="errors">{emptyError}</p>
-              )}
-              {emailError && <p className="errors">{emailError}</p>}
+              {!formData.contact_email && <p className="error">{emptyError}</p>}
+              {emailError && <p className="error">{emailError}</p>}
             </div>
           </div>
         </div>

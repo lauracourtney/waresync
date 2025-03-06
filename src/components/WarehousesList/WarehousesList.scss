@@ -3,7 +3,7 @@
 @use "../../styles/partials/fonts" as *;
 
 .warehouses {
-  @include list-component;
+  @include component;
 
   &__header {
     @include item-list-header;
