@@ -50,7 +50,7 @@ export default function AddWareHouse() {
       setIsFormValid(false);
       setEmptyError(
         <>
-          <img className="error-icon" src={errorIcon} /> This field is required
+          <img className="error__icon" src={errorIcon} /> This field is required
         </>
       );
       return;
@@ -58,10 +58,10 @@ export default function AddWareHouse() {
 
     if (!validPhoneFormat.test(formData.contact_phone)) {
       setPhoneError(
-        <>
-          <img className="error-icon" src={errorIcon} />
-          Please enter a valid phone number
-        </>
+        <div className="error">
+          <img className="error__icon" src={errorIcon} />
+          <h3>Please enter a valid phone number</h3>
+        </div>
       );
       setIsFormValid(false);
       return;
@@ -70,7 +70,7 @@ export default function AddWareHouse() {
     if (!validEmailFormat.test(formData.contact_email)) {
       setEmailError(
         <>
-          <img className="error-icon" src={errorIcon} />
+          <img className="error__icon" src={errorIcon} />
           Please enter a valid email
         </>
       );
@@ -125,6 +125,7 @@ export default function AddWareHouse() {
     setEmptyError("");
     setEmailError("");
     setPhoneError("");
+    navigate("/warehouses", { state: { refresh: true }, replace: true });
   };
 
   return (
@@ -159,7 +160,7 @@ export default function AddWareHouse() {
                 />
               </label>
               {!formData.warehouse_name && (
-                <p className="errors">{emptyError}</p>
+                <p className="error">{emptyError}</p>
               )}
             </div>
 
@@ -179,7 +180,7 @@ export default function AddWareHouse() {
                   onChange={handleChange}
                 />
               </label>
-              {!formData.address && <p className="errors">{emptyError}</p>}
+              {!formData.address && <p className="error">{emptyError}</p>}
             </div>
 
             <div className="add-warehouse__item">
@@ -198,7 +199,7 @@ export default function AddWareHouse() {
                   onChange={handleChange}
                 />
               </label>
-              {!formData.city && <p className="errors">{emptyError}</p>}
+              {!formData.city && <p className="error">{emptyError}</p>}
             </div>
 
             <div className="add-warehouse__item">
@@ -217,7 +218,7 @@ export default function AddWareHouse() {
                   onChange={handleChange}
                 />
               </label>
-              {!formData.country && <p className="errors">{emptyError}</p>}
+              {!formData.country && <p className="error">{emptyError}</p>}
             </div>
           </div>
 
@@ -240,12 +241,12 @@ export default function AddWareHouse() {
                   onChange={handleChange}
                 />
               </label>
-              {!formData.contact_name && <p className="errors">{emptyError}</p>}
+              {!formData.contact_name && <p className="error">{emptyError}</p>}
             </div>
 
             <div className="add-warehouse__item">
               <label className="add-warehouse__label">
-                <h3 className="add-warehouse__subtitle"></h3>Position
+                <h3 className="add-warehouse__subtitle">Position</h3>
                 <input
                   className={`add-warehouse__input ${
                     !isFormValid && !formData.contact_position
@@ -260,7 +261,7 @@ export default function AddWareHouse() {
                 />
               </label>
               {!formData.contact_position && (
-                <p className="errors">{emptyError}</p>
+                <p className="error">{emptyError}</p>
               )}
             </div>
 
@@ -278,15 +279,13 @@ export default function AddWareHouse() {
                   onChange={handleChange}
                 />
               </label>
-              {!formData.contact_phone && (
-                <p className="errors">{emptyError}</p>
-              )}
-              {phoneError && <p className="errors">{phoneError}</p>}
+              {!formData.contact_phone && <p className="error">{emptyError}</p>}
+              {phoneError && <p className="error">{phoneError}</p>}
             </div>
 
             <div className="add-warehouse__item">
               <label className="add-warehouse__label">
-                Email
+                <h3 className="add-warehouse__subtitle">Email</h3>
                 <input
                   className={`add-warehouse__input ${
                     !isFormValid ? "add-warehouse__input--error" : ""
@@ -298,10 +297,8 @@ export default function AddWareHouse() {
                   onChange={handleChange}
                 />
               </label>
-              {!formData.contact_email && (
-                <p className="errors">{emptyError}</p>
-              )}
-              {emailError && <p className="errors">{emailError}</p>}
+              {!formData.contact_email && <p className="error">{emptyError}</p>}
+              {emailError && <p className="error">{emailError}</p>}
             </div>
           </div>
         </div>
