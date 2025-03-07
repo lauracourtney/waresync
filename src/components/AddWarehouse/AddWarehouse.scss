@@ -1,1 +1,74 @@
-@use "../../styles/partials/global";
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.add-warehouse {
+  @include component;
+
+  &__header {
+    @include edit-add-top;
+  }
+
+  &__title {
+    padding-left: 1rem;
+  }
+
+  &__border {
+    @include grey-border;
+  }
+
+  &__middle {
+    @include tablet {
+      @include flex-box(space-evenly, center);
+    }
+  }
+
+  &__subheader {
+    padding: 1rem;
+  }
+
+  &__details {
+    @include form-section;
+
+    &--division {
+      @include right-section-border;
+    }
+  }
+
+  &__contact {
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &__item {
+    @include form-item;
+  }
+
+  &__label {
+    @include form-item-label;
+  }
+
+  &__input {
+    @include input-bar;
+  }
+
+  &__bottom {
+    background-color: $secondary-color;
+  }
+
+  &__buttons {
+    @include bottom-buttons;
+  }
+
+  &__button {
+    @include add-new-button;
+  }
+}
+
+.error {
+  @include error-message;
+
+  &__icon {
+    @include height-width(1rem, 1rem);
+  }
+}
