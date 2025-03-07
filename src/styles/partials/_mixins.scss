@@ -96,6 +96,19 @@
   @include flex-box(flex-start, center);
 }
 
+@mixin sorting-icon {
+  @include height-width(1rem, 1rem);
+  fill: #5c667e;
+}
+
+@mixin icons-block {
+  @include flex-box(space-between, center);
+}
+
+@mixin icon-item {
+  @include height-width(1.5rem, 1.5rem);
+}
+
 // ****INVENTORY STOCK ICON STYLING****
 @mixin in-stock-styling {
   text-align: left;
@@ -229,19 +242,6 @@
 
 @mixin list-item-header {
   padding-bottom: 0.25rem;
-}
-
-@mixin sorting-icon {
-  @include height-width(1rem, 1rem);
-  fill: #5c667e;
-}
-
-@mixin icons-block {
-  @include flex-box(space-between, center);
-}
-
-@mixin icon-item {
-  @include height-width(1.5rem, 1.5rem);
 }
 
 // ****EDIT/ADD FORM PAGES****

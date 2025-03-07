@@ -237,13 +237,7 @@
 .icons {
   @include icons-block;
 
-  @include tablet {
-    &__right {
-      margin-left: 0.75rem;
-    }
-  }
-
-  &__right {
+  &__edit {
     @include icon-item;
   }
 
