@@ -22,7 +22,7 @@
   }
 
   &__menu {
-    @include flex-box(space-between, center, wrap);
+    @include flex-box(space-between, center, nowrap, row);
     width: 100%;
     border-radius: 0.5rem;
 
