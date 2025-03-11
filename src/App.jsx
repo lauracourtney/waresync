@@ -5,8 +5,7 @@ import WarehousesPage from "./pages/WarehousesPage.jsx";
 import EditWareHouse from "./components/EditWarehouse/EditWarehouse";
 import AddWareHouse from "./components/AddWarehouse/AddWarehouse";
 // import InventoryPage from "./pages/InventoryPage/InventoryPage";
-// import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
-// import "./App.scss";
+import WarehouseDetailsPage from "./pages/WarehousesDetailsPage.jsx";
 
 // import EditInventoryItem from "./components/EditInventoryItem/EditInventoryItem";
 // import AddInventoryItem from "./components/AddInventoryItem/AddInventoryItem";
@@ -24,11 +23,14 @@ export default function App() {
         <Route path="/warehouses" element={<WarehousesPage />} />
         <Route path="/edit/:id" element={<EditWareHouse />} />
         <Route path="/add" element={<AddWareHouse />} />
+        <Route
+          path="/warehousedetails/:id"
+          element={<WarehouseDetailsPage />}
+        />
         {/* <Route path="/inventory/add" element={<AddInventoryItem />} />
         <Route path="/inventory" element={<InventoryPage />} />
         <Route path="/inventory/:id" element={<InventoryDetailsPage />} />
-        <Route path="/inventory/edit/:id" element={<EditInventoryItem />} />
-        <Route path="/warehousedetails/:id" element={<WarehouseDetailsPage />} /> */}
+        <Route path="/inventory/edit/:id" element={<EditInventoryItem />} /> */}
       </Routes>
       <Footer />
     </>

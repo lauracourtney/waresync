@@ -58,26 +58,22 @@ export default function WarehouseDetails() {
         </div>
         <Link
           to={`/edit/${id}`}
-          className="single-warehouse__edit-link"
+          className="single-warehouse__link"
           state={{ refresh: true }}
         >
-          <img
-            src={EditIcon}
-            className="single-warehouse__edit-icon"
-            alt="Edit"
-          />
+          <img src={EditIcon} className="single-warehouse__icon" alt="Edit" />
           <p className="single-warehouse__edit">Edit</p>
         </Link>
       </header>
-      <div className="single-warehouse__address-details">
-        <div className="single-warehouse__small-container">
+      <div className="single-warehouse__details">
+        <div className="single-warehouse__left">
           <h4 className="single-warehouse__heading">WAREHOUSE ADDRESS:</h4>
           <p className="single-warehouse__address">
             {warehouseDetails.address}, {warehouseDetails.city},{" "}
             {warehouseDetails.country}
           </p>
         </div>
-        <div className="single-warehouse__big-container">
+        <div className="single-warehouse__right">
           <article className="single-warehouse__contact">
             <h4 className="single-warehouse__heading">CONTACT NAME:</h4>
             <p>{warehouseDetails.contact_name}</p>

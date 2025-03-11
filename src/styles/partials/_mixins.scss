@@ -103,6 +103,10 @@
 
 @mixin icons-block {
   @include flex-box(space-between, center);
+
+  @include tablet {
+    justify-content: flex-end;
+  }
 }
 
 @mixin icon-item {
@@ -216,7 +220,8 @@
   border-top: 0.15rem solid $secondary-color;
 
   @include tablet {
-    @include flex-box(space-between, center);
+    display: grid;
+    grid-template-columns: 85% 15%;
     padding: 1rem 2rem;
   }
 }
@@ -227,10 +232,11 @@
 }
 
 @mixin item-list-contents {
-  width: 90%;
-  @include flex-box(space-between, center, wrap, row);
+  width: 85%;
+  @include flex-box(space-between, flex-start, wrap, row);
 
   @include tablet {
+    width: 100%;
     @include flex-box(space-between, center);
   }
 }
