@@ -43,7 +43,6 @@
 
   &__info {
     @include item-list-contents;
-    width: 85%;
   }
 
   &__left {
@@ -53,7 +52,7 @@
     @include flex-box(flex-start, flex-start, nowrap, column);
 
     @include tablet {
-      width: 46%;
+      width: 50%;
       padding: 0;
       @include flex-box(space-between, center, nowrap, row);
     }
@@ -71,7 +70,7 @@
     @include flex-box(flex-start, flex-start, nowrap, column);
 
     @include tablet {
-      width: 50%;
+      width: 45%;
       padding: 0;
       @include flex-box(space-between, center, nowrap, row);
     }
@@ -84,38 +83,52 @@
 
 .warehouses-categories {
   display: none;
-  background-color: $background-color;
-  padding: 0 1rem;
+  background-color: $secondary-color;
   @include height-width(2rem, 100%);
 
   @include tablet {
-    padding: 0;
+    padding: 0rem 2rem;
+    @include flex-box(space-evenly, center);
+  }
+
+  &__big {
+    width: 100%;
     @include flex-box(space-between, center);
   }
 
+  &__left {
+    width: 50%;
+    @include flex-box(space-between);
+  }
+
+  &__right {
+    width: 50%;
+    @include flex-box(space-between);
+  }
+
   &__warehouse {
-    @include flex-box(center, center);
-    width: 20%;
+    @include flex-box(flex-start, center);
+    width: 50%;
   }
 
   &__address {
-    @include flex-box(center, center);
-    width: 20%;
+    @include flex-box(flex-start, center);
+    width: 50%;
   }
 
   &__name {
-    @include flex-box(center, center);
-    width: 20%;
+    @include flex-box(flex-start, center);
+    width: 50%;
   }
 
   &__information {
-    @include flex-box(center, center);
-    width: 24%;
+    @include flex-box(flex-start, center);
+    width: 50%;
   }
 
   &__actions {
-    width: 16%;
-    text-align: center;
+    width: 4rem;
+    text-align: right;
   }
 
   &__icon {
@@ -128,7 +141,7 @@
   @include flex-box(center, flex-start, nowrap, column);
 
   @include tablet {
-    width: 47.5%;
+    width: 50%;
     padding: 0;
   }
 
@@ -147,23 +160,16 @@
 
   &__link {
     text-decoration: none;
-    align-items: center;
-    gap: 0.25rem;
-    transition: all 0.3s ease-in-out;
     @include flex-box(center, center);
 
     &:hover {
-      .warehouse__icon {
-        transform: translateX(4px);
-        transition: transform 0.3s ease-in-out;
-      }
+      transform: translateX(4px);
+      transition: transform 0.3s ease-in-out;
     }
   }
 
   &__icon {
     fill: $primary-color;
-    margin-left: 0.25rem;
-    transition: transform 0.3s ease-in-out;
     @include height-width(1rem, 1rem);
   }
 
@@ -182,8 +188,8 @@
   @include flex-box(center, flex-start, nowrap, column);
 
   @include tablet {
-    width: 45%;
     padding: 0;
+    width: auto;
   }
 
   &__heading {
@@ -199,11 +205,8 @@
   @include flex-box(center, flex-start, wrap, column);
 
   @include tablet {
-    width: 47.5%;
-  }
-
-  @include desktop {
-    width: 70%;
+    padding: 0;
+    width: 50%;
   }
 
   &__heading {
@@ -221,7 +224,6 @@
 
 .info {
   @include tablet {
-    width: 47.5%;
     text-align: left;
   }
 
@@ -237,13 +239,7 @@
 .icons {
   @include icons-block;
 
-  @include tablet {
-    &__right {
-      margin-left: 0.75rem;
-    }
-  }
-
-  &__right {
+  &__edit {
     @include icon-item;
   }
 
