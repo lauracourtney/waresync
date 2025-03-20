@@ -1,1 +1,179 @@
-@use "../../styles/partials/global";
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.warehouse-inventory {
+  @include tablet {
+    margin: 0 2rem;
+  }
+
+  @include desktop {
+    margin: 0 8rem;
+  }
+
+  &__details {
+    @include list-item-box;
+  }
+
+  &__item {
+    @include item-list-contents;
+  }
+
+  &__left {
+    @include item-contents-left;
+  }
+
+  &__right {
+    @include flex-box(flex-start, flex-start, nowrap, column);
+    width: 45%;
+
+    @include tablet {
+      @include flex-box(space-evenly, center, nowrap, row);
+      width: 55%;
+    }
+  }
+}
+
+.categories {
+  display: none;
+  background-color: $background-color;
+  @include height-width(2rem, 100%);
+  padding: 0 1rem;
+
+  @include tablet {
+    @include flex-box(space-between, center);
+  }
+}
+
+.ware-inventory {
+  @include flex-box(center, flex-start, nowrap, column);
+  padding-bottom: 1rem;
+
+  @include tablet {
+    width: 63%;
+    padding: 0;
+  }
+
+  &__name {
+    color: $primary-color;
+    font-weight: 600;
+
+    @include tablet {
+      text-align: left;
+    }
+  }
+
+  &__link {
+    @include flex-box(center, center);
+    text-decoration: none;
+  }
+
+  &__icon {
+    @include height-width(1rem, 1rem);
+    fill: $primary-color;
+    margin-left: 0.25rem;
+  }
+
+  &__heading {
+    padding-bottom: 0.5rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+.inv-statuses {
+  @include flex-box(center, flex-start, nowrap, column);
+  padding-bottom: 1rem;
+
+  @include tablet {
+    width: 63%;
+    padding: 0;
+  }
+
+  &__heading {
+    padding-bottom: 0.5rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__value {
+    &--in {
+      @include in-stock-styling;
+    }
+
+    &--out {
+      @include out-of-stock-styling;
+    }
+  }
+}
+
+.inv-icons {
+  @include flex-box(space-between, center);
+  padding-bottom: 1rem;
+
+  @include tablet {
+    width: 7%;
+  }
+
+  &__button {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    img {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    &.icons__delete img {
+      fill: $supporting-color-G;
+    }
+
+    &.icons__edit img {
+      fill: $primary-color;
+    }
+  }
+}
+
+.inventories {
+  &__item {
+    @include item-list-contents;
+  }
+
+  &__details {
+    border-bottom: 0.15rem solid $secondary-color;
+    padding: 1rem 1rem 0 1rem;
+
+    @include tablet {
+      @include flex-box(space-between, center);
+      padding: 1rem;
+    }
+  }
+
+  &__left {
+    @include item-contents-left;
+  }
+
+  &__right {
+    @include item-contents-right;
+  }
+}
+
+.category {
+  &__name {
+    @include tablet {
+      padding-bottom: -1rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .category__heading,
+  .status__heading,
+  .quantity__heading {
+    display: none;
+  }
+}

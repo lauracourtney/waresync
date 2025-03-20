@@ -5,7 +5,7 @@ import WarehousesPage from "./pages/WarehousesPage.jsx";
 import EditWareHouse from "./components/EditWarehouse/EditWarehouse";
 import AddWareHouse from "./components/AddWarehouse/AddWarehouse";
 // import InventoryPage from "./pages/InventoryPage/InventoryPage";
-import WarehouseDetailsPage from "./pages/WarehousesDetailsPage.jsx";
+import WarehouseDetailsPage from "./pages/WarehousesDetailsPage/WarehousesDetailsPage.jsx";
 
 // import EditInventoryItem from "./components/EditInventoryItem/EditInventoryItem";
 // import AddInventoryItem from "./components/AddInventoryItem/AddInventoryItem";
