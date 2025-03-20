@@ -4,7 +4,7 @@
 .single-warehouse {
   &__header {
     @include flex-box(space-between, center);
-    padding: 1rem;
+    padding: 2rem 1rem;
     @include grey-border;
 
     @include tablet {
@@ -82,8 +82,7 @@
   }
 
   &__right {
-    @include flex-box(space-between, center, nowrap, row);
-    padding-top: 2rem;
+    @include flex-box(space-between, center, wrap, row);
 
     @include tablet {
       gap: 2rem;
@@ -91,6 +90,14 @@
       border-left: 1px solid $secondary-color;
       padding: 1rem 2rem;
     }
+  }
+
+  &__contact {
+    padding-top: 2rem;
+  }
+
+  &__information {
+    padding-top: 2rem;
   }
 
   &__address {
