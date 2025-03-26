@@ -113,6 +113,22 @@
   @include height-width(1.5rem, 1.5rem);
 }
 
+@mixin categories-bar($justify-content, $align-items) {
+  display: none;
+  background-color: $secondary-color;
+  @include height-width(2rem, 100%);
+
+  @include tablet {
+    padding: 0rem 2rem;
+    @include flex-box($justify-content, $align-items);
+  }
+}
+
+@mixin category-item {
+  @include flex-box(center, center);
+  min-width: 6rem;
+}
+
 // ****INVENTORY STOCK ICON STYLING****
 @mixin in-stock-styling {
   text-align: left;

@@ -55,14 +55,7 @@
 }
 
 .warehouses-categories {
-  display: none;
-  background-color: $secondary-color;
-  @include height-width(2rem, 100%);
-
-  @include tablet {
-    padding: 0rem 2rem;
-    @include flex-box(space-evenly, center);
-  }
+  @include categories-bar(space-evenly, center);
 
   &__big {
     width: 100%;

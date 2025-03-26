@@ -66,12 +66,10 @@
   &__details {
     @include flex-box(none, none, nowrap, column);
     padding: 1rem;
-    border-bottom: 0.15rem solid $secondary-color;
 
     @include tablet {
       @include flex-box(space-between, none, nowrap, row);
       padding: 0;
-      border-bottom: none;
     }
   }
 
@@ -94,10 +92,18 @@
 
   &__contact {
     padding-top: 2rem;
+
+    @include tablet {
+      padding: 0;
+    }
   }
 
   &__information {
     padding-top: 2rem;
+
+    @include tablet {
+      padding: 0;
+    }
   }
 
   &__address {

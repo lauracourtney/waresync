@@ -5,6 +5,7 @@ import "./WarehousesDetailsPage.scss";
 
 export default function WarehouseDetailsPage() {
   const { id } = useParams();
+
   return (
     <section className="warehouse-details">
       <WarehouseDetails warehouseId={id} />

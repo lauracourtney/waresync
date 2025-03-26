@@ -31,16 +31,35 @@
       width: 55%;
     }
   }
+
+  &__categories {
+    @include categories-bar(space-between, center);
+  }
 }
 
-.categories {
-  display: none;
-  background-color: $background-color;
-  @include height-width(2rem, 100%);
-  padding: 0 1rem;
+.warehouse-inventory {
+  &__icon {
+    @include height-width(1.25rem, 1.25rem);
+  }
 
-  @include tablet {
-    @include flex-box(space-between, center);
+  &__item {
+    @include category-item;
+  }
+
+  &__category {
+    @include category-item;
+  }
+
+  &__status {
+    @include category-item;
+  }
+
+  &__quantity {
+    @include category-item;
+  }
+
+  &__actions {
+    @include category-item;
   }
 }
 
@@ -111,31 +130,7 @@
 }
 
 .inv-icons {
-  @include flex-box(space-between, center);
-  padding-bottom: 1rem;
-
-  @include tablet {
-    width: 7%;
-  }
-
-  &__button {
-    background: none;
-    border: none;
-    cursor: pointer;
-
-    img {
-      width: 1rem;
-      height: 1rem;
-    }
-
-    &.icons__delete img {
-      fill: $supporting-color-G;
-    }
-
-    &.icons__edit img {
-      fill: $primary-color;
-    }
-  }
+  @include icons-block;
 }
 
 .inventories {
@@ -144,13 +139,7 @@
   }
 
   &__details {
-    border-bottom: 0.15rem solid $secondary-color;
-    padding: 1rem 1rem 0 1rem;
-
-    @include tablet {
-      @include flex-box(space-between, center);
-      padding: 1rem;
-    }
+    @include list-item-box;
   }
 
   &__left {
@@ -159,21 +148,5 @@
 
   &__right {
     @include item-contents-right;
-  }
-}
-
-.category {
-  &__name {
-    @include tablet {
-      padding-bottom: -1rem;
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .category__heading,
-  .status__heading,
-  .quantity__heading {
-    display: none;
   }
 }

@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Chevron from "../../assets/imgs/chevron_right.svg";
-import DeleteIcon from "../../assets/imgs/delete_outline.svg";
 import EditIconBlue from "../../assets/imgs/edit-blue.svg";
 import { formatStatus } from "../../../utils";
 // import InventoryModal from "../InventoryModal/InventoryModal";
@@ -77,9 +76,9 @@ export default function WarehouseInventoryList({ warehouseId }) {
   }
 
   return (
-    <section className="warehouse-inventories">
-      <div className="warehouse-inventories__component">
-        <div className="categories">
+    <section className="wareouse-inventory">
+      <div className="warehouse-inventory__component">
+        <div className="warehouse-inventory__categories">
           <h4
             className="categories__item"
             onClick={() => handleSort("item_name")}
@@ -182,17 +181,27 @@ export default function WarehouseInventoryList({ warehouseId }) {
             </div>
 
             <div className="inv-icons">
-              <button
-                className="inv-icons__button inv-icons__delete"
-                onClick={() => openDeleteModal(item)}
-              >
-                <img src={DeleteIcon} alt="Delete" />
-              </button>
               <Link
                 to={`/inventory/edit/${item.id}`}
                 className="inv-icons__button inv-icons__edit"
               >
                 <img src={EditIconBlue} alt="Edit" />
+              </Link>
+              <Link
+                to={`/inventory/edit/${item.id}`}
+                className="inv-icons__button inv-icons__edit"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="inv-icons__button inv-icons__delete"
+                  onClick={() => openDeleteModal(item)}
+                >
+                  <path
+                    d="M6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7H6V19ZM8 9H16V19H8V9ZM15.5 4L14.5 3H9.5L8.5 4H5V6H19V4H15.5Z"
+                    fill="#C94515"
+                  />
+                </svg>
               </Link>
             </div>
           </div>
