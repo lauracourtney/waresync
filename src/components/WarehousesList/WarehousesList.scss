@@ -205,10 +205,7 @@
 .icons {
   @include icons-block;
 
-  &__edit {
-    @include icon-item;
-  }
-
+  &__edit,
   &__left {
     @include icon-item;
   }

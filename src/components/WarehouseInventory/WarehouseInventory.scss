@@ -1,6 +1,25 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+.inventories,
+.warehouse-inventory {
+  &__item {
+    @include item-list-contents;
+  }
+
+  &__details {
+    @include list-item-box;
+  }
+
+  &__left {
+    @include item-contents-left;
+  }
+
+  &__right {
+    @include item-contents-right;
+  }
+}
+
 .warehouse-inventory {
   @include tablet {
     margin: 0 2rem;
@@ -9,35 +28,11 @@
   @include desktop {
     margin: 0 8rem;
   }
-
-  &__details {
-    @include list-item-box;
-  }
-
-  &__item {
-    @include item-list-contents;
-  }
-
-  &__left {
-    @include item-contents-left;
-  }
-
-  &__right {
-    @include flex-box(flex-start, flex-start, nowrap, column);
-    width: 45%;
-
-    @include tablet {
-      @include flex-box(space-evenly, center, nowrap, row);
-      width: 55%;
-    }
-  }
-
-  &__categories {
-    @include categories-bar(space-between, center);
-  }
 }
 
-.warehouse-inventory {
+.categories {
+  @include categories-bar(space-between, center);
+
   &__icon {
     @include height-width(1.25rem, 1.25rem);
   }
@@ -46,20 +41,11 @@
     @include category-item;
   }
 
-  &__category {
-    @include category-item;
-  }
-
-  &__status {
-    @include category-item;
-  }
-
-  &__quantity {
-    @include category-item;
-  }
-
+  &__category,
+  &__status,
+  &__quantity,
   &__actions {
-    @include category-item;
+    @include category-item-inv;
   }
 }
 
@@ -68,7 +54,7 @@
   padding-bottom: 1rem;
 
   @include tablet {
-    width: 63%;
+    width: 50%;
     padding: 0;
   }
 
@@ -82,22 +68,31 @@
   }
 
   &__link {
-    @include flex-box(center, center);
+    @include flex-box(baseline, center);
     text-decoration: none;
+
+    @include tablet {
+      min-width: 4rem;
+    }
   }
 
   &__icon {
     @include height-width(1rem, 1rem);
     fill: $primary-color;
     margin-left: 0.25rem;
-  }
-
-  &__heading {
-    padding-bottom: 0.5rem;
 
     @include tablet {
-      display: none;
+      margin: 0;
     }
+  }
+}
+
+.category,
+.quantity,
+.inv-statuses,
+.ware-inventory {
+  &__heading {
+    @include list-item-subtitle;
   }
 }
 
@@ -108,14 +103,6 @@
   @include tablet {
     width: 63%;
     padding: 0;
-  }
-
-  &__heading {
-    padding-bottom: 0.5rem;
-
-    @include tablet {
-      display: none;
-    }
   }
 
   &__value {
@@ -131,22 +118,13 @@
 
 .inv-icons {
   @include icons-block;
-}
 
-.inventories {
-  &__item {
-    @include item-list-contents;
+  &__delete,
+  &__edit {
+    @include icon-item;
   }
 
-  &__details {
-    @include list-item-box;
-  }
-
-  &__left {
-    @include item-contents-left;
-  }
-
-  &__right {
-    @include item-contents-right;
+  &__delete {
+    cursor: pointer;
   }
 }

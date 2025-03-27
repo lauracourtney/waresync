@@ -129,6 +129,11 @@
   min-width: 6rem;
 }
 
+@mixin category-item-inv {
+  @include flex-box(flex-end, center);
+  min-width: 6rem;
+}
+
 // ****INVENTORY STOCK ICON STYLING****
 @mixin in-stock-styling {
   text-align: left;
@@ -266,6 +271,14 @@
   padding-bottom: 0.25rem;
 }
 
+@mixin list-item-subtitle {
+  padding-bottom: 0.5rem;
+
+  @include tablet {
+    display: none;
+  }
+}
+
 @mixin item-contents-left {
   width: 45%;
   min-width: 7rem;
@@ -273,9 +286,9 @@
   @include flex-box(flex-start, flex-start, nowrap, column);
 
   @include tablet {
-    width: 50%;
     padding: 0;
-    @include flex-box(space-between, center, nowrap, row);
+    @include flex-box(flex-start, center, nowrap, row);
+    width: 100%;
   }
 
   @include desktop {
@@ -291,9 +304,9 @@
   @include flex-box(flex-start, flex-start, nowrap, column);
 
   @include tablet {
-    width: 45%;
     padding: 0;
-    @include flex-box(space-between, center, nowrap, row);
+    @include flex-box(space-evenly, center, nowrap, row);
+    width: 100%;
   }
 
   @include desktop {
