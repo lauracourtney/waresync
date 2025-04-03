@@ -54,8 +54,12 @@
   padding-bottom: 1rem;
 
   @include tablet {
-    width: 50%;
+    width: 61%;
     padding: 0;
+  }
+
+  @include desktop {
+    width: 70%;
   }
 
   &__name {
@@ -96,22 +100,44 @@
   }
 }
 
+.quantity {
+  width: 25%;
+
+  @include tablet {
+    width: 15%;
+  }
+
+  @include desktop {
+    width: 20%;
+  }
+}
+
 .inv-statuses {
   @include flex-box(center, flex-start, nowrap, column);
   padding-bottom: 1rem;
 
   @include tablet {
-    width: 63%;
+    width: 35%;
     padding: 0;
   }
 
+  @include desktop {
+    width: 50%;
+  }
+
   &__value {
+    width: 60%;
+
     &--in {
       @include in-stock-styling;
     }
 
     &--out {
       @include out-of-stock-styling;
+
+      @include tablet {
+        min-width: 6.875rem;
+      }
     }
   }
 }
